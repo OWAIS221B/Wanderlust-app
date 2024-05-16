@@ -1,2 +1,2 @@
 # Wanderlust-app
-Full Stack travel app
+Full Stack travel app.
