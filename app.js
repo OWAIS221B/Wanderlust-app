@@ -14,7 +14,7 @@ main().then(() => {
 })
 
 
-// console.log(path.join(__dirname, 'views'), "ghgfgfhgfh")
+///////// console.log(path.join(__dirname, 'views'), "ghgfgfhgfh")
 
 
 async function main() {
@@ -31,19 +31,19 @@ app.get('/', (req, res) => {
 })
 
 
-//Index route
+///////////////   Index route
 app.get('/listings', async (req, res) => {
     const allListings = await Listing.find({})
     res.render('listings/index.ejs', { allListings })
 })
 
-//New route
+//////////////    New route
 
 app.get('/listings/new', (req, res) => {
     res.render('listings/new.ejs')
 })
 
-//Show route 
+/////////////    Show route 
 
 app.get('/listings/:id', async (req, res) => {
     let { id } = req.params
@@ -51,7 +51,7 @@ app.get('/listings/:id', async (req, res) => {
     res.render('listings/show.ejs', { listing })
 })
 
-//Create route
+////////////     Create route
 
 app.post('/listing', async (req, res) => {
     let listing = req.body.listing
@@ -61,7 +61,7 @@ app.post('/listing', async (req, res) => {
     return
 })
 
-//Edit route
+///////////////    Edit route
 
 app.get('/listings/:id/edit', async (req, res) => {
     let { id } = req.params
@@ -69,7 +69,7 @@ app.get('/listings/:id/edit', async (req, res) => {
     res.render('listings/edit.ejs', { listing })
 })
 
-//Update route
+////////////////   Update route
 app.put('/listings/:id', async (req, res) => {
     let { id } = req.params
     await Listing.findByIdAndUpdate(id, { ...req.body.listing })
