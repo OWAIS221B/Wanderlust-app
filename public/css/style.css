@@ -106,3 +106,18 @@ body {
   background-color: #fe244d !important;
   border: none;
 }
+
+/* Show page */
+
+.show-img {
+  height: 30vh;
+}
+
+.btns {
+  display: flex;
+}
+
+.show-card {
+  padding-left: 0;
+  padding-right: 0;
+}
