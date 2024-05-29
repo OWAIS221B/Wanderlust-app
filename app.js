@@ -58,15 +58,19 @@ app.get('/listings/:id', async (req, res) => {
 
 ////////////     Create route
 
-app.post('/listing', async (req, res) => {
-    let listing = req.body.listing
-    const newListing = new Listing(listing);
-    await newListing.save();
-    res.redirect('/listings')
-    return
+app.post('/listing', async (req, res, next) => {
+    try {
+        let listing = req.body.listing
+        const newListing = new Listing(listing);
+        await newListing.save();
+        res.redirect('/listings')
+    } catch (err) {
+        next(err)
+    }
+
 })
 
-///////////////    Edit route
+////////////    Edit route
 
 app.get('/listings/:id/edit', async (req, res) => {
     let { id } = req.params
@@ -104,6 +108,10 @@ app.delete("/listings/:id", async (req, res) => {
 //     console.log('sample was saved')
 //     res.send('successful testing')
 // })
+
+app.use((err, req, res, next) => {
+    res.send('Something went wrong')
+})
 
 app.listen(8080, () => {
     console.log('Server is listening to port 8080')
