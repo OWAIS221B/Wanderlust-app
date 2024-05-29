@@ -20,6 +20,8 @@
             class="form-control"
             required
           />
+          <div class="valid-feedback">Title looks good</div>
+          <div class="invalid-feedback">invalid title</div>
         </div>
         <div class="mb-3">
           <lable for="description" class="form-label">Description</lable>
@@ -28,6 +30,7 @@
             class="form-control"
             required
           ></textarea>
+          <div class="invalid-feedback">Please write a short description</div>
         </div>
 
         <div class="mb-3">
@@ -45,11 +48,11 @@
             <lable for="price" class="form-label">Price</lable>
             <input
               name="listing[price]"
-              placeholder="enter enter price"
-              type="number"
+              placeholder="1200 "
               class="form-control"
               required
             />
+            <div class="invalid-feedback">Price should be valid</div>
           </div>
 
           <div class="mb-3 col-md-8">
@@ -61,6 +64,7 @@
               class="form-control"
               required
             />
+            <div class="invalid-feedback">country name should be valid</div>
           </div>
         </div>
 
@@ -74,6 +78,7 @@
             class="form-control"
             required
           />
+          <div class="invalid-feedback">Location should be valid</div>
         </div>
 
         <br /><br />
